@@ -756,7 +756,7 @@ h4,
   position: relative;
 }
 .hero__full {
-  background-image: url(../../images/2024-05-18-16-57-07-_1_.jpg);
+  background-image: url(./../images/2024-05-18-16-57-07-_1_.jpg);
   background-repeat: no-repeat;
   background-position: right 0%;
   background-size: 100% 179%;
@@ -1053,7 +1053,7 @@ h4,
   border-color: var(--color-accent);
 }
 .contacts__full {
-  background-image: url(../../images/pClCzhvTPmrfWVQHZzmZ_aerial-view-of-city-buildings-3d-render-with-quention-mark-point-map-SBV-307625.jpg);
+  background-image: url(./../images/pClCzhvTPmrfWVQHZzmZ_aerial-view-of-city-buildings-3d-render-with-quention-mark-point-map-SBV-307625.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
