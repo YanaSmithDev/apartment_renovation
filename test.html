@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест SVG Sprite</title>
+  </head>
+  <body>
+    <style>
+      body {
+      }
+      .header__logo {
+        font-size: 24px;
+        position: relative;
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+      }
+      .header__logo span {
+        position: relative;
+      }
+      .header__logo span::before {
+        content: url("images/icons/logo-icon.svg");
+
+        position: absolute;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        top: -14px;
+        left: -75px;
+        z-index: 5;
+      }
+
+      .header__logo svg {
+        color: var(--color-accent);
+      }
+
+      .header__logo:hover {
+        color: var(--color-accent);
+      }
+    </style>
+    <a href="#" class="header__logo">
+      <span
+        >Ремонт <br />
+        квартир</span
+      >
+    </a>
+    <script>
+      console.log("Тестирование завершено");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.mobile-overlay {
+  box-sizing: border-box;
+  width: 400px;
+  // height: 350px;
+  border: none;
+  background-color: var(--color-line);
+  color: var(--color-light);
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__body {
+    text-align: center;
+
+    span {
+      @include fluid-text(30, 24);
+
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

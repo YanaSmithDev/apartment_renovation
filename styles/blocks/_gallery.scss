@@ -1,0 +1,117 @@
+.gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(100px, 300px));
+  grid-template-areas:
+    "one one one"
+    "two three three"
+    "two four five"
+    "six six six";
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: var(--transition-duration);
+    }
+
+    @include hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    @include tablet {
+      &::after {
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 1;
+      }
+    }
+
+    &-1 {
+      grid-area: one;
+    }
+
+    &-2 {
+      grid-area: two;
+    }
+
+    &-3 {
+      grid-area: three;
+    }
+
+    &-4 {
+      grid-area: four;
+    }
+
+    &-5 {
+      grid-area: five;
+    }
+
+    &-6 {
+      grid-area: six;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 1.5rem;
+      right: 4rem;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: 0.5s;
+      z-index: 5;
+
+      & h3 {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+
+      &-list {
+        justify-self: start;
+      }
+
+      @include tablet {
+        opacity: 1;
+        transform: translateX(0);
+        // color: var(--color-dark);
+        // background-color: rgba(0, 0, 0, 0.4);
+        border-radius: var(--border-radius-small);
+        padding: 10px;
+      }
+    }
+
+    &:hover &-info {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @include tablet {
+    grid-template-rows: repeat(6, minmax(100px, 300px));
+    grid-template-areas:
+      "one one one"
+      "two two two"
+      "three three three"
+      "four four four"
+      "five five five"
+      "six six six";
+  }
+}

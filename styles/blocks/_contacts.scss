@@ -1,0 +1,166 @@
+.contacts {
+  .button {
+    border-color: var(--color-accent);
+  }
+
+  &__full {
+    background-image: url(../../images/pClCzhvTPmrfWVQHZzmZ_aerial-view-of-city-buildings-3d-render-with-quention-mark-point-map-SBV-307625329-HD.v2.0000000-1920w.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &-left {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      span {
+        @include fluid-text(30, 20);
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & > a {
+          @include fluid-text(30, 25);
+
+          color: var(--color-accent);
+          align-self: flex-start;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            translate: -50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition-duration: inherit;
+          }
+
+          @include hover {
+            color: var(--color-light);
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+      @include mobile {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      &-links {
+        align-self: flex-end;
+
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        @include mobile {
+          flex-wrap: nowrap;
+          flex-direction: column;
+        }
+
+        a {
+          width: 50%;
+
+          @include tablet {
+            width: 90%;
+          }
+
+          @include mobile {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &-right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      span:first-child {
+        @include fluid-text(30, 20);
+
+        color: var(--color-accent);
+        text-transform: uppercase;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        @include mobile {
+          align-items: flex-start;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+
+          border: 1px solid var(--color-line);
+          background-color: transparent;
+          outline-color: var(--color-line);
+          color: var(--color-light);
+
+          padding: 7px 15px;
+        }
+
+        textarea {
+          resize: none;
+        }
+
+        button {
+          width: 50%;
+
+          @include tablet {
+            width: 90%;
+          }
+        }
+
+        small {
+          @include fluid-text(8, 12);
+        }
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}

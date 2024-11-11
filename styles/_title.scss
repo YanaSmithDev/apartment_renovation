@@ -1,0 +1,15 @@
+.title {
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background-color: var(--color-accent);
+    left: 0;
+    bottom: -10px;
+  }
+}

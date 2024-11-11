@@ -1,0 +1,24 @@
+.burger-button {
+  @include reset-button;
+  // ширина кнопки будет в 2 раза больше, чем по макету, но полоски бургера будут 50%б те соответствие макету сохранится, а нажимать на кнопку будет удобнее
+  @include square(40px);
+
+  position: relative;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-accent);
+
+  @include hover {
+    background-color: var(--color-accent);
+  }
+
+  &::after {
+    @include abs-center;
+
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: var(--color-accent);
+    border-radius: 5px;
+    box-shadow: 0 -8px, 0 8px;
+  }
+}

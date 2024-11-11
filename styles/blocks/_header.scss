@@ -1,0 +1,168 @@
+@import "../globals";
+
+.header {
+  background: linear-gradient(
+    180deg,
+    #1b1b1b 0%,
+    rgba(27, 27, 27, 0.68) 53.44%,
+    rgba(27, 27, 27, 0) 100%
+  );
+  padding-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  @include desktop {
+    padding-top: 20px;
+  }
+
+  @include mobile {
+    padding-top: 15px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+
+    @include tablet {
+      column-gap: 30px;
+    }
+  }
+
+  &__logo {
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+
+    & svg {
+      color: var(--color-accent);
+    }
+
+    @include hover {
+      & {
+        color: var(--color-accent);
+      }
+    }
+
+    @include tablet {
+      &,
+      & svg {
+        color: var(--color-accent);
+      }
+    }
+
+    @include mobile {
+      font-size: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+
+      & span {
+        // text-align: center;
+      }
+
+      & svg {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__menu {
+    // margin-left: auto;
+    font-size: 16px;
+
+    @include desktop {
+      font-size: 12px;
+    }
+
+    @include tablet {
+      font-size: 10px;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      @include desktop {
+        column-gap: 20px;
+      }
+    }
+    // увеличить область нажатия ссылок
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 48px;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-accent);
+        transition-duration: inherit;
+      }
+    }
+  }
+
+  &__button {
+    @include tablet {
+      height: 48px;
+      padding-inline: 18px;
+      font-size: 16px;
+    }
+  }
+
+  &__phone {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-inline: 5px;
+    border: var(--border);
+    border-radius: var(--border-radius-small);
+
+    @include hover {
+      & {
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    &-whatsapp-link,
+    &-telegram-link {
+      @include hover {
+        & path {
+          fill: var(--color-accent);
+        }
+      }
+    }
+
+    @include mobile-s {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+}
